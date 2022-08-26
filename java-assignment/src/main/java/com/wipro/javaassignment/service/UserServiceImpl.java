@@ -3,6 +3,7 @@ package com.wipro.javaassignment.service;
 import com.wipro.javaassignment.dao.UserRepo;
 import com.wipro.javaassignment.model.UserData;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -31,4 +32,14 @@ public class UserServiceImpl implements UserService {
     public void saveUser(UserData userData) {
         userRepo.save(userData);
     }
+
+    @Override
+    public List<UserData> getUserswithSort(String field) {
+        //Todo: Pagination params can be introduced later
+        List<UserData> result = new ArrayList<>();
+        userRepo.findAll(Sort.by(Sort.Direction.ASC,field)).forEach(result::add);
+        return result;
+    }
+
+
 }

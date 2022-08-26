@@ -2,7 +2,9 @@ package com.wipro.javaassignment.controller;
 
 import com.wipro.javaassignment.model.UserData;
 import com.wipro.javaassignment.service.UserService;
+import net.bytebuddy.TypeCache;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,5 +32,10 @@ public class UserController {
         userService.saveUser(userData);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @GetMapping("/{field}")
+    public ResponseEntity<List<UserData>> getUserswithsort(@PathVariable String field){
+                   return new ResponseEntity<>(userService.getUserswithSort(field), HttpStatus.OK);
+        }
 
 }
