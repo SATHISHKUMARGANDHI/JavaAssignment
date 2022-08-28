@@ -4,6 +4,7 @@ import com.wipro.javaassignment.model.UserData;
 import com.wipro.javaassignment.service.UserService;
 import net.bytebuddy.TypeCache;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,5 +38,10 @@ public class UserController {
     public ResponseEntity<List<UserData>> getUserswithsort(@PathVariable String field){
                    return new ResponseEntity<>(userService.getUserswithSort(field), HttpStatus.OK);
         }
+       @GetMapping(value = "/user/{pageNo}/{pageSize}")
+    public List<UserData> getPaginatedCountries(@PathVariable int pageNo,
+                                               @PathVariable int pageSize) {
 
+        return userService.findPaginated(pageNo, pageSize);
+    }
 }

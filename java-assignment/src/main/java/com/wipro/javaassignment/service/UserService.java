@@ -12,4 +12,6 @@ public interface UserService {
 
 
     List<UserData> getUserswithSort(String field);
+
+    List<UserData> findPaginated(int pageNo, int pageSize);
 }

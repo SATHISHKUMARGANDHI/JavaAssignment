@@ -3,6 +3,9 @@ package com.wipro.javaassignment.service;
 import com.wipro.javaassignment.dao.UserRepo;
 import com.wipro.javaassignment.model.UserData;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -39,6 +42,15 @@ public class UserServiceImpl implements UserService {
         List<UserData> result = new ArrayList<>();
         userRepo.findAll(Sort.by(Sort.Direction.ASC,field)).forEach(result::add);
         return result;
+    }
+
+    @Override
+    public List<UserData> findPaginated(int pageNo, int pageSize) {
+        //Todo: Pagination params can be introduced later
+        //List<UserData> result = new ArrayList<>();
+        Pageable paging = PageRequest.of(pageNo,pageSize);
+        Page<UserData> pagedResult =userRepo.findAll(paging);
+        return pagedResult.toList();
     }
 
 
