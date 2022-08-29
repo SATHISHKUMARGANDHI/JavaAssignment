@@ -1,4 +1,4 @@
-package com.wipro.javaassignment;
+package com.javaassignment;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

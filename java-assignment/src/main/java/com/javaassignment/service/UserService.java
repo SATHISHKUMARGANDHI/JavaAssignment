@@ -1,7 +1,7 @@
-package com.wipro.javaassignment.service;
+package com.javaassignment.service;
 
 
-import com.wipro.javaassignment.model.UserData;
+import com.javaassignment.model.UserData;
 
 import java.util.List;
 
@@ -12,4 +12,6 @@ public interface UserService {
 
 
     List<UserData> getUserswithSort(String field);
+
+    List<UserData> findPaginated(int pageNo, int pageSize);
 }

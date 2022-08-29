@@ -1,4 +1,4 @@
-package com.wipro.javaassignment.model;
+package com.javaassignment.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
