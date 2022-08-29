@@ -1,7 +1,7 @@
-package com.wipro.javaassignment.service;
+package com.javaassignment.service;
 
-import com.wipro.javaassignment.dao.UserRepo;
-import com.wipro.javaassignment.model.UserData;
+import com.javaassignment.model.UserData;
+import com.javaassignment.dao.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

@@ -1,7 +1,6 @@
-package com.wipro.javaassignment.dao;
+package com.javaassignment.dao;
 
-import com.wipro.javaassignment.model.UserData;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.javaassignment.model.UserData;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
